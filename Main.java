@@ -25,10 +25,7 @@ public class Main {
 		driver.findElement(By.xpath("(//img[@role='presentation'])[2]")).click();
 		driver.findElement(By.xpath("(//div[@class='_9Hza'])[28]")).click();
 		driver.findElement(By.xpath("(//button[normalize-space()='Search'])[1]")).click();
-		//fetching the date
-		String datefull = driver.findElement(By.xpath("//div[@class=\"_3MiP\"]")).getText();
-		String date = datefull.substring(8)+""+datefull.substring(4,8)+""+2023;
-		
+
 		//book now 
 		driver.findElement(By.xpath("(//a[contains(text(),'Book')])[1]")).click();
 		// Window Handeling
@@ -43,9 +40,9 @@ public class Main {
 			String flightId = driver.findElement(By.xpath("(//div[@class='_3qjA'])[1]")).getText();	
 			String arrTime = driver.findElements(By.xpath("//div[@class='_171D']")).get(0).getText();
 			String depTime = driver.findElements(By.xpath("//div[@class='_171D']")).get(1).getText();
-			//String datefull = driver.findElement(By.xpath("(//div[@class='gxCp'][normalize-space()='Fri, 28 Jul 23'])[1]")).getText();
+			String datefull = driver.findElement(By.xpath("//body/div[@id='app']/div/div[@class='_1HKZ']/div/div[@class='_2Cmt']/div[@class='_-ZoM']/div[@class='_3_9L row']/div[@class='N9Zv']/div[@class='_2IC8']/div/div/div[@class='_2ZS3']/div[@class='_1Dh8']/div/div[@class='_2t8r row']/div[1]/div[3]")).getText();
 			
-			System.out.println("Date:"+date+"  :;  "+"FlightName: "+flightName+"  :;  "+"FlightID: "+flightId+"  :;  "+"ArrTime: "+arrTime+"  :;  "+"DepTime: "+depTime);
+			System.out.println("Date: "+datefull.substring(6)+"  :;  "+"FlightName: "+flightName+"  :;  "+"FlightID: "+flightId+"  :;  "+"ArrTime: "+arrTime+"  :;  "+"DepTime: "+depTime);
 			driver.close();
 		
 
